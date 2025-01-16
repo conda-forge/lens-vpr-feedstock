@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/lens-vpr-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lens-vpr-{{ version }}.tar.gz
   sha256: aac0707a5bd2e3c9f6dbbd155461906b84dd5be30b0b324655ed9ae29a22ecb0
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.6,<3.12
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.6,<3.12
+    - python >={{ python_min }},<3.12
     - pytorch >=2.1.1
     - torchvision >=0.16.1
     - numpy >=1.26.2
@@ -41,6 +41,7 @@ test:
     - lens
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/AdamDHines/LENS
