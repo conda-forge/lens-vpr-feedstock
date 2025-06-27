@@ -1,5 +1,5 @@
 {% set name = "lens-vpr" %}
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/lens-vpr-{{ version }}.tar.gz
-  sha256: a3bc89d56f8fdeb75cf698eddb7598a88be19cebe6fcc98c160d13101e749b12
+  sha256: 9f8febd71ffa19bc931b8e165940eae2c0137b461bdbce9138da9b535fae4a18
 
 build:
   noarch: python
